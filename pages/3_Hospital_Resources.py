@@ -10,7 +10,7 @@ from datetime import datetime
 def load_data():
     # --- Database Connection Details ---
     # !!! IMPORTANT: Change this to your actual PostgreSQL password !!!
-    DB_PASSWORD = "password1" 
+    DB_PASSWORD = "password" 
     DB_NAME = "hospital_db"
     DB_USER = "postgres"
     DB_HOST = "localhost"
