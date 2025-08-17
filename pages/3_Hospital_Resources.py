@@ -1,46 +1,50 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, exc
 from datetime import datetime
 
-# --- Database Connection ---
-@st.cache_resource
-def get_db_engine():
-    DB_PASSWORD = "password" # !!! IMPORTANT: Change to your password !!!
+# --- "SMART" DATA LOADER ---
+# It tries the database first, then falls back to CSV.
+@st.cache_data
+def load_data():
+    # --- Database Connection Details ---
+    # !!! IMPORTANT: Change this to your actual PostgreSQL password !!!
+    DB_PASSWORD = "password" 
     DB_NAME = "hospital_db"
     DB_USER = "postgres"
     DB_HOST = "localhost"
     DB_PORT = "5432"
     DATABASE_URL = f"postgresql+psycopg2://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
+
     try:
-        engine = create_engine(DATABASE_URL)
-        return engine
-    except Exception as e:
-        st.error(f"DB connection failed: {e}")
-        return None
-
-engine = get_db_engine()
-
-# --- Load Data from DATABASE ---
-@st.cache_data
-def load_data_from_db():
-    if engine is not None:
+        # --- Try to connect to the database FIRST ---
+        engine = create_engine(DATABASE_URL, connect_args={'connect_timeout': 5})
+        query = "SELECT * FROM resources;"
+        df = pd.read_sql(query, engine)
+        df['resource_date'] = pd.to_datetime(df['resource_date'])
+        # st.sidebar.success("Live DB Connection", icon="🌐") # Optional: uncomment for local debugging
+        return df
+    except (exc.OperationalError, Exception):
+        # --- If DB connection fails, FALL BACK to CSV ---
+        # st.sidebar.warning("DB connection failed. Falling back to CSV.", icon="📁") # Optional: uncomment for local debugging
         try:
-            query = "SELECT * FROM resources;"
-            df = pd.read_sql(query, engine)
-            df['resource_date'] = pd.to_datetime(df['resource_date'])
+            df = pd.read_csv("Hospital_resources.csv")
+            # Ensure date format is correct for the CSV file
+            df['resource_date'] = pd.to_datetime(df['resource_date'], format='%d-%b-%y', errors='coerce')
+            # Ensure column names match the database version (lowercase)
+            df.columns = [col.strip().lower() for col in df.columns]
             return df
-        except Exception as e:
-            st.error(f"Could not read from 'resources' table: {e}")
+        except FileNotFoundError:
+            st.error("Fallback file 'Hospital_resources.csv' not found.")
             return pd.DataFrame()
-    return pd.DataFrame()
 
 # --- Streamlit Page Setup ---
 st.set_page_config(layout="wide")
-st.title("🏥 Hospital Resource Dashboard (Live Database)")
+st.title("🏥 Hospital Resource Dashboard")
+st.markdown("This dashboard provides a real-time or file-based overview of hospital resources.")
 
-df = load_data_from_db()
+df = load_data()
 df.dropna(subset=['resource_date'], inplace=True)
 
 if not df.empty:
@@ -49,26 +53,13 @@ if not df.empty:
     min_date = df['resource_date'].min().date()
     max_date = df['resource_date'].max().date()
     selected_date_range = st.sidebar.date_input("Select Date Range:", value=(min_date, max_date), min_value=min_date, max_value=max_date, format="YYYY-MM-DD")
+    
     all_wards = sorted(df['ward'].unique())
     selected_wards = st.sidebar.multiselect("Select Ward(s):", options=all_wards, default=all_wards)
+    
     all_resources = sorted(df['resource_type'].unique())
     selected_resources = st.sidebar.multiselect("Select Resource Type(s):", options=all_resources, default=all_resources)
     
-    # --- NEW: ADVANCED CHART CONTROLS in sidebar ---
-    st.sidebar.header("Advanced Chart Controls:")
-    group_by_option = st.sidebar.selectbox(
-        "Group Analysis By:",
-        ('Ward', 'Resource Type')
-    )
-    metric_to_analyze = st.sidebar.selectbox(
-        "Metric to Analyze:",
-        ('Total Available', 'Total Occupied')
-    )
-    
-    # Map the selection to the actual column names
-    group_by_col = 'ward' if group_by_option == 'Ward' else 'resource_type'
-    metric_col = 'total_available' if metric_to_analyze == 'Total Available' else 'total_occupied'
-
     # --- FILTERING ---
     df_selection = df.copy()
     if len(selected_date_range) == 2:
@@ -85,26 +76,22 @@ if not df.empty:
         st.warning("No data available for the selected filters.")
     else:
         st.markdown("### Resource Status for Selected Filters")
-        st.dataframe(df_selection[['resource_date', 'hospital_id', 'ward', 'resource_type', 'total_available', 'total_occupied']])
+        df_display = df_selection.copy()
+        df_display['resource_date'] = df_display['resource_date'].dt.strftime('%Y-%m-%d')
+        st.dataframe(df_display[['resource_date', 'hospital_id', 'ward', 'resource_type', 'total_available', 'total_occupied']])
 
         st.markdown("---")
         col1, col2 = st.columns(2)
         with col1:
-            st.markdown(f"### Analysis of **{metric_to_analyze}** by **{group_by_option}**")
-            
-            # The bar chart is now fully dynamic based on the advanced controls!
-            fig_bar = px.bar(
-                df_selection.groupby(group_by_col)[metric_col].sum().reset_index(),
-                x=group_by_col,
-                y=metric_col,
-                title=f'{metric_to_analyze} by {group_by_option}'
-            )
-            st.plotly_chart(fig_bar, use_container_width=True)
-            
+            st.markdown("### Resource Availability by Type")
+            availability_fig = px.bar(
+                df_selection.groupby(['ward', 'resource_type'])['total_available'].sum().reset_index(),
+                x='ward', y='total_available', color='resource_type', title='Quantity of Resources by Ward')
+            st.plotly_chart(availability_fig, use_container_width=True)
         with col2:
-            st.markdown("### Overall Resource Utilization")
+            st.markdown("### Resource Utilization")
             df_selection['utilization'] = (df_selection['total_occupied'] / df_selection['total_available'].replace(0, pd.NA)) * 100
-            fig_pie = px.pie(df_selection, names='resource_type', values='utilization', title='Utilization Rate (%) by Resource Type', hole=0.4)
-            st.plotly_chart(fig_pie, use_container_width=True)
+            utilization_fig = px.pie(df_selection, names='resource_type', values='utilization', title='Resource Utilization Rate (%)', hole=0.4)
+            st.plotly_chart(utilization_fig, use_container_width=True)
 else:
-    st.error("Could not load resource data from the database.")
+    st.error("Could not load resource data from database or CSV file.")
