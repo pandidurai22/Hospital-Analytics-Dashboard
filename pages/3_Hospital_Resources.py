@@ -10,7 +10,7 @@ from datetime import datetime
 def load_data():
     # --- Database Connection Details ---
     # !!! IMPORTANT: Change this to your actual PostgreSQL password !!!
-    DB_PASSWORD = "password" 
+    DB_PASSWORD = "password1" 
     DB_NAME = "hospital_db"
     DB_USER = "postgres"
     DB_HOST = "localhost"
@@ -31,7 +31,7 @@ def load_data():
         try:
             df = pd.read_csv("Hospital_resources.csv")
             # Ensure date format is correct for the CSV file
-            df['resource_date'] = pd.to_datetime(df['resource_date'], format='%d-%b-%y', errors='coerce')
+            df['RESOURCE_DATE'] = pd.to_datetime(df['RESOURCE_DATE'].str.upper(), format='%d-%b-%y', errors='coerce')
             # Ensure column names match the database version (lowercase)
             df.columns = [col.strip().lower() for col in df.columns]
             return df
