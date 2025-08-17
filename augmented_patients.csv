@@ -1,101 +1,101 @@
 patient_id,age,gender,location,condition,cost
-100,45,Male,T Nagar,Diabetes,18314
-47,74,Female,Anna Nagar,Heart Disease,3797
-59,32,Male,Porur,Stroke,8597
-92,61,Female,T Nagar,Heart Disease,15267
-41,43,Female,Porur,Arthritis,8356
-60,63,Female,Anna Nagar,Hypertension,13318
-19,59,Female,Pallavaram,Heart Disease,13717
-4,78,Female,Pallavaram,Cancer,17711
-96,44,Female,Kodambakkam,Arthritis,3871
-72,38,Male,Pallavaram,Hypertension,3616
-85,81,Female,Pallavaram,Diabetes,7597
-64,25,Female,Velachery,Arthritis,2010
-78,72,Female,Velachery,Arthritis,16225
-68,38,Male,Kodambakkam,Arthritis,6637
-52,69,Male,Velachery,Stroke,9041
-29,32,Male,Velachery,Heart Disease,13356
-79,69,Male,T Nagar,Hypertension,10972
-61,19,Female,Pallavaram,Stroke,16345
-67,28,Male,Kodambakkam,Stroke,19639
-17,78,Female,Porur,Diabetes,16176
-2,57,Female,T Nagar,Cancer,1942
-76,64,Male,Velachery,Stroke,12443
-45,52,Female,Anna Nagar,Diabetes,4000
-83,26,Male,Anna Nagar,Hypertension,9561
-48,37,Female,Kodambakkam,Hypertension,14747
-43,66,Male,Anna Nagar,Stroke,8770
-18,21,Female,Pallavaram,Heart Disease,10080
-1,80,Female,T Nagar,Diabetes,2585
-77,66,Female,Kodambakkam,Diabetes,2508
-49,78,Female,Kodambakkam,Arthritis,10763
-63,57,Male,Pallavaram,Hypertension,11624
-31,75,Male,T Nagar,Stroke,17678
-8,29,Female,Porur,Diabetes,11224
-97,76,Male,Kodambakkam,Cancer,9510
-10,43,Female,Pallavaram,Stroke,14105
-82,45,Male,T Nagar,Hypertension,14413
-20,57,Female,Anna Nagar,Arthritis,14222
-24,68,Male,Porur,Cancer,17953
-7,81,Male,Kodambakkam,Hypertension,3013
-38,75,Female,T Nagar,Arthritis,18006
-32,52,Female,Anna Nagar,Cancer,3168
-21,70,Female,Pallavaram,Hypertension,7954
-26,26,Female,Porur,Arthritis,12058
-91,59,Male,T Nagar,Stroke,11051
-51,39,Male,Velachery,Stroke,3979
-98,19,Female,T Nagar,Stroke,14140
-25,69,Male,Velachery,Stroke,8254
-95,66,Male,Kodambakkam,Arthritis,17323
-40,64,Male,Porur,Cancer,17723
-37,20,Female,Kodambakkam,Heart Disease,5431
-57,72,Female,Kodambakkam,Cancer,5481
-71,82,Female,Anna Nagar,Cancer,6181
-30,49,Female,Pallavaram,Cancer,4683
-58,78,Male,Kodambakkam,Diabetes,5448
-35,35,Female,Pallavaram,Heart Disease,11831
-14,58,Female,Velachery,Heart Disease,11235
-23,69,Male,T Nagar,Arthritis,14927
-84,44,Male,Pallavaram,Heart Disease,19839
-15,33,Female,Anna Nagar,Diabetes,7478
-33,29,Male,Porur,Cancer,5194
-13,42,Female,Velachery,Stroke,3514
-53,27,Male,Anna Nagar,Cancer,10862
-6,61,Female,Porur,Cancer,3045
-73,37,Female,Porur,Diabetes,9489
-27,35,Female,Velachery,Diabetes,4414
-74,61,Male,Pallavaram,Arthritis,18147
-89,63,Male,Anna Nagar,Cancer,10189
-16,71,Male,Anna Nagar,Cancer,5168
-50,39,Male,Anna Nagar,Arthritis,13338
-22,34,Male,Anna Nagar,Stroke,14671
-99,77,Female,Velachery,Cancer,15482
-28,19,Female,Anna Nagar,Hypertension,10282
-93,38,Male,Pallavaram,Cancer,12697
-87,59,Male,Kodambakkam,Hypertension,11366
-65,70,Male,Anna Nagar,Stroke,2912
-75,21,Female,Anna Nagar,Diabetes,19266
-66,68,Male,Kodambakkam,Arthritis,5388
-81,31,Female,Kodambakkam,Stroke,10243
-42,74,Male,Velachery,Heart Disease,17378
-80,58,Male,Anna Nagar,Arthritis,2822
-3,45,Male,Velachery,Heart Disease,15610
-54,45,Male,Porur,Diabetes,16445
-5,20,Female,Pallavaram,Diabetes,19193
-36,70,Female,Velachery,Heart Disease,3587
-55,25,Female,Anna Nagar,Arthritis,7772
-12,49,Female,Kodambakkam,Heart Disease,16999
-46,82,Male,Velachery,Hypertension,4772
-88,38,Female,T Nagar,Arthritis,18350
-86,33,Female,Pallavaram,Hypertension,10233
-69,55,Female,Anna Nagar,Hypertension,3170
-44,56,Male,T Nagar,Cancer,11593
-9,78,Female,Pallavaram,Cancer,8568
-94,60,Male,Velachery,Hypertension,9502
-62,80,Female,T Nagar,Hypertension,8706
-90,48,Female,T Nagar,Arthritis,9726
-56,76,Male,Anna Nagar,Diabetes,11199
-11,32,Female,Anna Nagar,Arthritis,11547
-39,27,Male,Velachery,Stroke,16384
-34,47,Male,Anna Nagar,Hypertension,9125
-70,78,Female,Velachery,Arthritis,16183
+P0100,45,Male,T Nagar,Diabetes,18314
+P0047,74,Female,Anna Nagar,Heart Disease,3797
+P0059,32,Male,Porur,Stroke,8597
+P0092,61,Female,T Nagar,Heart Disease,15267
+P0041,43,Female,Porur,Arthritis,8356
+P0060,63,Female,Anna Nagar,Hypertension,13318
+P0019,59,Female,Pallavaram,Heart Disease,13717
+P0004,78,Female,Pallavaram,Cancer,17711
+P0096,44,Female,Kodambakkam,Arthritis,3871
+P0072,38,Male,Pallavaram,Hypertension,3616
+P0085,81,Female,Pallavaram,Diabetes,7597
+P0064,25,Female,Velachery,Arthritis,2010
+P0078,72,Female,Velachery,Arthritis,16225
+P0068,38,Male,Kodambakkam,Arthritis,6637
+P0052,69,Male,Velachery,Stroke,9041
+P0029,32,Male,Velachery,Heart Disease,13356
+P0079,69,Male,T Nagar,Hypertension,10972
+P0061,19,Female,Pallavaram,Stroke,16345
+P0067,28,Male,Kodambakkam,Stroke,19639
+P0017,78,Female,Porur,Diabetes,16176
+P0002,57,Female,T Nagar,Cancer,1942
+P0076,64,Male,Velachery,Stroke,12443
+P0045,52,Female,Anna Nagar,Diabetes,4000
+P0083,26,Male,Anna Nagar,Hypertension,9561
+P0048,37,Female,Kodambakkam,Hypertension,14747
+P0043,66,Male,Anna Nagar,Stroke,8770
+P0018,21,Female,Pallavaram,Heart Disease,10080
+P0001,80,Female,T Nagar,Diabetes,2585
+P0077,66,Female,Kodambakkam,Diabetes,2508
+P0049,78,Female,Kodambakkam,Arthritis,10763
+P0063,57,Male,Pallavaram,Hypertension,11624
+P0031,75,Male,T Nagar,Stroke,17678
+P0008,29,Female,Porur,Diabetes,11224
+P0097,76,Male,Kodambakkam,Cancer,9510
+P0010,43,Female,Pallavaram,Stroke,14105
+P0082,45,Male,T Nagar,Hypertension,14413
+P0020,57,Female,Anna Nagar,Arthritis,14222
+P0024,68,Male,Porur,Cancer,17953
+P0007,81,Male,Kodambakkam,Hypertension,3013
+P0038,75,Female,T Nagar,Arthritis,18006
+P0032,52,Female,Anna Nagar,Cancer,3168
+P0021,70,Female,Pallavaram,Hypertension,7954
+P0026,26,Female,Porur,Arthritis,12058
+P0091,59,Male,T Nagar,Stroke,11051
+P0051,39,Male,Velachery,Stroke,3979
+P0098,19,Female,T Nagar,Stroke,14140
+P0025,69,Male,Velachery,Stroke,8254
+P0095,66,Male,Kodambakkam,Arthritis,17323
+P0040,64,Male,Porur,Cancer,17723
+P0037,20,Female,Kodambakkam,Heart Disease,5431
+P0057,72,Female,Kodambakkam,Cancer,5481
+P0071,82,Female,Anna Nagar,Cancer,6181
+P0030,49,Female,Pallavaram,Cancer,4683
+P0058,78,Male,Kodambakkam,Diabetes,5448
+P0035,35,Female,Pallavaram,Heart Disease,11831
+P0014,58,Female,Velachery,Heart Disease,11235
+P0023,69,Male,T Nagar,Arthritis,14927
+P0084,44,Male,Pallavaram,Heart Disease,19839
+P0015,33,Female,Anna Nagar,Diabetes,7478
+P0033,29,Male,Porur,Cancer,5194
+P0013,42,Female,Velachery,Stroke,3514
+P0053,27,Male,Anna Nagar,Cancer,10862
+P0006,61,Female,Porur,Cancer,3045
+P0073,37,Female,Porur,Diabetes,9489
+P0027,35,Female,Velachery,Diabetes,4414
+P0074,61,Male,Pallavaram,Arthritis,18147
+P0089,63,Male,Anna Nagar,Cancer,10189
+P0016,71,Male,Anna Nagar,Cancer,5168
+P0050,39,Male,Anna Nagar,Arthritis,13338
+P0022,34,Male,Anna Nagar,Stroke,14671
+P0099,77,Female,Velachery,Cancer,15482
+P0028,19,Female,Anna Nagar,Hypertension,10282
+P0093,38,Male,Pallavaram,Cancer,12697
+P0087,59,Male,Kodambakkam,Hypertension,11366
+P0065,70,Male,Anna Nagar,Stroke,2912
+P0075,21,Female,Anna Nagar,Diabetes,19266
+P0066,68,Male,Kodambakkam,Arthritis,5388
+P0081,31,Female,Kodambakkam,Stroke,10243
+P0042,74,Male,Velachery,Heart Disease,17378
+P0080,58,Male,Anna Nagar,Arthritis,2822
+P0003,45,Male,Velachery,Heart Disease,15610
+P0054,45,Male,Porur,Diabetes,16445
+P0005,20,Female,Pallavaram,Diabetes,19193
+P0036,70,Female,Velachery,Heart Disease,3587
+P0055,25,Female,Anna Nagar,Arthritis,7772
+P0012,49,Female,Kodambakkam,Heart Disease,16999
+P0046,82,Male,Velachery,Hypertension,4772
+P0088,38,Female,T Nagar,Arthritis,18350
+P0086,33,Female,Pallavaram,Hypertension,10233
+P0069,55,Female,Anna Nagar,Hypertension,3170
+P0044,56,Male,T Nagar,Cancer,11593
+P0009,78,Female,Pallavaram,Cancer,8568
+P0094,60,Male,Velachery,Hypertension,9502
+P0062,80,Female,T Nagar,Hypertension,8706
+P0090,48,Female,T Nagar,Arthritis,9726
+P0056,76,Male,Anna Nagar,Diabetes,11199
+P0011,32,Female,Anna Nagar,Arthritis,11547
+P0039,27,Male,Velachery,Stroke,16384
+P0034,47,Male,Anna Nagar,Hypertension,9125
+P0070,78,Female,Velachery,Arthritis,16183
