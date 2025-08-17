@@ -1,0 +1,8 @@
+"EVENT_DATE","DISTRICT","STATE","DISEASE","CASES_REPORTED","DEATHS_REPORTED","SEVERITY_LEVEL","SOURCE"
+"15-JAN-25","Chennai","Tamil Nadu","Influenza A (H1N1)","120","3","Moderate","IDSP Weekly Report"
+"22-MAR-25","Coimbatore","Tamil Nadu","Measles","50","1","Moderate","Local Health Dept."
+"10-MAY-25","Ernakulam","Kerala","Acute Diarrheal Disease","150","2","Moderate","IDSP Weekly Report"
+"05-JUN-25","Chennai","Tamil Nadu","Dengue Fever","210","3","Severe","IDSP Weekly Report"
+"18-AUG-25","Madurai","Tamil Nadu","Chikungunya","90","0","Moderate","News report"
+"25-OCT-25","Tiruchirappalli","Tamil Nadu","COVID-19 Variant","155","4","Severe","State Health Bulletin"
+"12-DEC-25","Coimbatore","Tamil Nadu","Viral Fever","300","1","Moderate","Local Health Dept."

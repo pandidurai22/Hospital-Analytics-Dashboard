@@ -1,0 +1,61 @@
+Patient_ID,Age,Gender,Condition,Procedure,Cost,Length_of_Stay,Readmission,Outcome,Satisfaction,Visit_Date,Location,Temp_Day_-1,Temp_Day_-2,Temp_Day_-3,Temp_Day_-4,Temp_Day_-5,Temp_Day_-6,Temp_Day_-7
+1,55,Male,Flu,Medication,500,2,No,Recovered,4,2025-01-02,Chennai,28.1,28.5,28.3,28.0,27.9,28.2,28.4
+2,62,Female,Hypertension,Checkup,800,1,No,Stable,5,2025-01-02,Chennai,28.1,28.5,28.3,28.0,27.9,28.2,28.4
+3,48,Male,Joint Pain,Physical Therapy,1200,5,No,Stable,4,2025-01-03,Tambaram,28.5,28.3,28.0,27.9,28.2,28.4,28.6
+4,33,Female,Common Cold,Medication,300,1,No,Recovered,5,2025-01-03,Tambaram,28.5,28.3,28.0,27.9,28.2,28.4,28.6
+5,71,Male,Diabetes Checkup,Lab Work,1500,1,No,Stable,4,2025-01-04,Anna Nagar,28.3,28.0,27.9,28.2,28.4,28.6,28.7
+6,29,Female,Migraine,Consultation,600,1,No,Stable,3,2025-01-06,Velachery,28.2,28.4,28.6,28.7,28.5,28.8,29.0
+7,58,Male,Flu,Medication,500,3,No,Recovered,4,2025-01-06,Velachery,28.2,28.4,28.6,28.7,28.5,28.8,29.0
+8,65,Female,Hypertension,Checkup,800,1,No,Stable,5,2025-01-07,T Nagar,28.4,28.6,28.7,28.5,28.8,29.0,29.1
+9,42,Male,Skin Rash,Ointment,400,1,No,Recovered,4,2025-01-08,Kodambakkam,28.6,28.7,28.5,28.8,29.0,29.1,29.3
+10,75,Male,Flu,Medication,500,4,Yes,Stable,3,2025-01-09,Ambattur,28.7,28.5,28.8,29.0,29.1,29.3,29.2
+11,38,Female,Common Cold,Medication,300,1,No,Recovered,5,2025-01-09,Ambattur,28.7,28.5,28.8,29.0,29.1,29.3,29.2
+12,69,Male,Diabetes Checkup,Lab Work,1500,1,No,Stable,4,2025-01-10,Pallavaram,28.5,28.8,29.0,29.1,29.3,29.2,29.4
+13,51,Female,Allergy,Consultation,600,1,No,Stable,4,2025-02-03,Porur,30.1,30.3,30.0,30.2,30.4,30.5,30.6
+14,45,Male,Joint Pain,Physical Therapy,1200,6,No,Stable,3,2025-02-04,Thiruvanmiyur,30.3,30.0,30.2,30.4,30.5,30.6,30.7
+15,68,Female,Hypertension,Checkup,800,1,No,Stable,5,2025-02-05,Chennai,30.0,30.2,30.4,30.5,30.6,30.7,30.9
+16,36,Male,Throat Infection,Antibiotics,450,2,No,Recovered,4,2025-02-06,Tambaram,30.2,30.4,30.5,30.6,30.7,30.9,31.0
+17,72,Female,Flu,Medication,500,3,No,Recovered,4,2025-02-10,Anna Nagar,30.7,30.9,31.0,31.2,31.1,31.3,31.4
+18,53,Male,Diabetes Checkup,Lab Work,1500,1,No,Stable,5,2025-03-03,Velachery,32.5,32.3,32.6,32.7,32.8,32.9,33.0
+19,47,Female,Migraine,Consultation,600,1,No,Stable,3,2025-03-04,T Nagar,32.3,32.6,32.7,32.8,32.9,33.0,33.1
+20,66,Male,Joint Pain,Physical Therapy,1200,7,Yes,Stable,2,2025-03-05,Kodambakkam,32.6,32.7,32.8,32.9,33.0,33.1,33.3
+21,31,Female,Allergy,Medication,350,1,No,Recovered,4,2025-03-06,Ambattur,32.7,32.8,32.9,33.0,33.1,33.3,33.4
+22,70,Male,Hypertension,Checkup,800,1,No,Stable,5,2025-04-01,Pallavaram,34.0,34.2,34.3,34.5,34.6,34.7,34.8
+23,59,Female,Asthma,Inhaler Refill,250,1,No,Stable,4,2025-04-02,Porur,34.2,34.3,34.5,34.6,34.7,34.8,35.0
+24,41,Male,Skin Rash,Ointment,400,1,No,Recovered,4,2025-04-03,Thiruvanmiyur,34.3,34.5,34.6,34.7,34.8,35.0,35.1
+25,78,Male,Diabetes Checkup,Lab Work,1500,1,No,Stable,4,2025-05-05,Chennai,36.1,36.3,36.2,36.4,36.5,36.6,36.8
+26,49,Female,Joint Pain,Consultation,600,1,No,Stable,3,2025-05-06,Tambaram,36.3,36.2,36.4,36.5,36.6,36.8,36.9
+27,63,Male,Hypertension,Checkup,800,1,No,Stable,5,2025-05-07,Anna Nagar,36.2,36.4,36.5,36.6,36.8,36.9,37.0
+28,34,Female,Dengue Fever,Medication,700,4,No,Recovered,4,2025-06-02,Velachery,37.5,37.3,37.6,37.7,37.8,37.9,38.0
+29,56,Male,Dengue Fever,Medication,700,5,No,Recovered,3,2025-06-03,T Nagar,37.3,37.6,37.7,37.8,37.9,38.0,38.1
+30,67,Female,Dengue Fever,Medication,700,5,No,Recovered,4,2025-06-04,Kodambakkam,37.6,37.7,37.8,37.9,38.0,38.1,38.3
+31,44,Male,Dengue Fever,Medication,700,4,No,Recovered,4,2025-06-05,Ambattur,37.7,37.8,37.9,38.0,38.1,38.3,38.4
+32,73,Male,Dengue Fever,Medication,700,6,Yes,Stable,2,2025-06-06,Pallavaram,37.8,37.9,38.0,38.1,38.3,38.4,38.5
+33,39,Female,Dengue Fever,Medication,700,4,No,Recovered,5,2025-06-09,Porur,38.1,38.3,38.4,38.5,38.2,38.6,38.7
+34,52,Male,Hypertension,Checkup,800,1,No,Stable,4,2025-07-01,Thiruvanmiyur,35.0,34.8,35.1,35.2,35.3,35.4,35.5
+35,46,Female,Diabetes Checkup,Lab Work,1500,1,No,Stable,5,2025-07-02,Chennai,34.8,35.1,35.2,35.3,35.4,35.5,35.6
+36,61,Male,Joint Pain,Physical Therapy,1200,8,No,Stable,3,2025-08-04,Tambaram,33.1,33.3,33.0,33.2,33.4,33.5,33.6
+37,35,Female,Chikungunya,Medication,600,3,No,Recovered,4,2025-08-19,Anna Nagar,33.3,33.0,33.2,33.4,33.5,33.6,33.7
+38,57,Male,Chikungunya,Medication,600,4,No,Recovered,3,2025-08-20,Velachery,33.0,33.2,33.4,33.5,33.6,33.7,33.9
+39,64,Female,Hypertension,Checkup,800,1,No,Stable,5,2025-09-01,T Nagar,32.5,32.3,32.6,32.7,32.8,32.9,33.0
+40,43,Male,Allergy,Consultation,600,1,No,Stable,4,2025-09-02,Kodambakkam,32.3,32.6,32.7,32.8,32.9,33.0,33.1
+41,76,Male,Diabetes Checkup,Lab Work,1500,1,No,Stable,4,2025-10-06,Ambattur,31.1,31.3,31.2,31.4,31.5,31.6,31.8
+42,50,Female,Viral Fever,Medication,550,3,No,Recovered,4,2025-10-27,Pallavaram,31.3,31.2,31.4,31.5,31.6,31.8,31.9
+43,60,Male,Viral Fever,Medication,550,4,No,Recovered,3,2025-10-28,Porur,31.2,31.4,31.5,31.6,31.8,31.9,32.0
+44,32,Female,COVID-19 Variant,Medication,1000,7,No,Recovered,4,2025-10-29,Thiruvanmiyur,31.4,31.5,31.6,31.8,31.9,32.0,32.1
+45,77,Male,COVID-19 Variant,Medication,1000,9,Yes,Stable,2,2025-10-30,Chennai,31.5,31.6,31.8,31.9,32.0,32.1,32.3
+46,54,Female,COVID-19 Variant,Medication,1000,8,No,Recovered,4,2025-10-31,Tambaram,31.6,31.8,31.9,32.0,32.1,32.3,32.4
+47,67,Male,Hypertension,Checkup,800,1,No,Stable,5,2025-11-03,Anna Nagar,30.5,30.3,30.6,30.7,30.8,30.9,31.0
+48,40,Female,Common Cold,Medication,300,1,No,Recovered,5,2025-12-01,Velachery,29.1,28.9,29.2,29.3,29.4,29.5,29.6
+49,74,Male,Viral Fever,Medication,550,5,No,Recovered,3,2025-12-15,T Nagar,28.9,29.2,29.3,29.4,29.5,29.6,29.7
+50,55,Female,Viral Fever,Medication,550,4,No,Recovered,4,2025-12-16,Kodambakkam,29.2,29.3,29.4,29.5,29.6,29.7,29.8
+51,37,Male,Flu,Medication,500,3,No,Recovered,4,2025-12-17,Ambattur,29.3,29.4,29.5,29.6,29.7,29.8,29.9
+52,69,Female,Viral Fever,Medication,550,5,Yes,Stable,3,2025-12-18,Pallavaram,29.4,29.5,29.6,29.7,29.8,29.9,30.0
+53,46,Male,Joint Pain,Physical Therapy,1200,10,No,Stable,3,2025-12-19,Porur,29.5,29.6,29.7,29.8,29.9,30.0,30.1
+54,79,Female,Hypertension,Checkup,800,1,No,Stable,5,2025-12-22,Thiruvanmiyur,29.8,29.9,30.0,30.1,29.9,30.2,30.3
+55,30,Male,Flu,Medication,500,2,No,Recovered,4,2025-12-23,Chennai,29.9,30.0,30.1,29.9,30.2,30.3,30.4
+56,60,Female,Viral Fever,Medication,550,5,No,Recovered,4,2025-12-24,Tambaram,30.0,30.1,29.9,30.2,30.3,30.4,30.5
+57,48,Male,Common Cold,Medication,300,1,No,Recovered,5,2025-12-26,Anna Nagar,29.9,30.2,30.3,30.4,30.5,30.3,30.6
+58,70,Female,Diabetes Checkup,Lab Work,1500,1,No,Stable,4,2025-12-29,Velachery,30.3,30.4,30.5,30.3,30.6,30.7,30.8
+59,51,Male,Flu,Medication,500,4,No,Recovered,3,2025-12-30,T Nagar,30.4,30.5,30.3,30.6,30.7,30.8,30.9
+60,35,Female,Viral Fever,Medication,550,3,No,Recovered,4,2025-12-31,Kodambakkam,30.5,30.3,30.6,30.7,30.8,30.9,31.0

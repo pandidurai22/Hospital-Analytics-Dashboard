@@ -1,0 +1,7 @@
+"EVENT_DATE","DISTRICT","STATE","DISEASE","CASES_REPORTED","DEATHS_REPORTED","SEVERITY_LEVEL","SOURCE"
+"10-MAY-25","Ernakulam","Kerala","Acute Diarrheal Disease","150","2","Moderate","IDSP Weekly Report"
+"15-MAY-25","Palakkad","Kerala","Nipah virus","5","2","Severe","News report"
+"25-MAY-25","Coimbatore","Tamil Nadu","Dengue Fever","80","1","Moderate","Local Health Dept."
+"05-JUN-25","Chennai","Tamil Nadu","Acute Diarrheal Disease","210","3","Severe","IDSP Weekly Report"
+"12-JUN-25","Madurai","Tamil Nadu","Dengue Fever","125","2","Moderate","News report"
+"20-JUN-25","Tiruchirappalli","Tamil Nadu","COVID-19 Delta Variant","55","4","Severe","State Health Bulletin"
