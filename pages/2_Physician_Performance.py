@@ -1,54 +1,54 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-from sqlalchemy import create_engine
-
-# --- Database Connection (reusable) ---
-@st.cache_resource
-def get_db_engine():
-    DB_PASSWORD = "password" # !!! IMPORTANT: Change to your password !!!
-    DB_NAME = "hospital_db"
-    DB_USER = "postgres"
-    DB_HOST = "localhost"
-    DB_PORT = "5432"
-    DATABASE_URL = f"postgresql+psycopg2://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
-    try:
-        engine = create_engine(DATABASE_URL)
-        return engine
-    except Exception as e:
-        st.error(f"DB connection failed: {e}")
-        return None
-
-engine = get_db_engine()
+from sqlalchemy import create_engine, exc
 
 # --- Load and Merge Data from DATABASE ---
 @st.cache_data
 def load_performance_data():
-    if engine is not None:
-        try:
-            query = """
-            SELECT v.visit_date, p.age, p.gender, p.location, p.condition, p.cost, v.satisfaction, ph.physician_name, ph.specialty
-            FROM visits v
-            JOIN patients p ON v.patient_id = p.patient_id
-            JOIN physicians ph ON v.physician_id = ph.physician_id;
-            """
-            df = pd.read_sql(query, engine)
-            return df
-        except Exception as e:
-            st.error(f"Could not read and join tables from the database: {e}")
-            return pd.DataFrame()
-    return pd.DataFrame()
+    # --- Database Connection Details ---
+    DB_PASSWORD = "password"
+    DB_NAME = "hospital_db"
+    # ... (rest of DB details) ...
+    DATABASE_URL = f"postgresql+psycopg2://postgres:{DB_PASSWORD}@localhost:5432/{DB_NAME}"
+    
+    try:
+        engine = create_engine(DATABASE_URL, connect_args={'connect_timeout': 5})
+        query = """
+        SELECT v.satisfaction, p.cost, ph.physician_name
+        FROM visits v
+        JOIN patients p ON v.patient_id = p.patient_id
+        JOIN physicians ph ON v.physician_id = ph.physician_id;
+        """
+        df = pd.read_sql(query, engine)
+        st.sidebar.success("Live DB Connection", icon="🌐")
+        return df
+    except (exc.OperationalError, Exception):
+        st.sidebar.warning("DB connection failed. Falling back to CSVs.", icon="📁")
+        # --- Fallback logic: recreate the join using pandas ---
+        visits_df = pd.read_csv("visits_with_physicians.csv")
+        patients_df = pd.read_csv("augmented_patients.csv")
+        physicians_df = pd.read_csv("physicians.csv")
+        
+        # Clean columns
+        visits_df.columns = [c.lower() for c in visits_df.columns]
+        patients_df.columns = [c.lower() for c in patients_df.columns]
+        physicians_df.columns = [c.lower() for c in physicians_df.columns]
 
-# --- Initialize Session State for storing the list of selected physicians ---
-if 'performance_physicians_list' not in st.session_state:
-    st.session_state.performance_physicians_list = []
+        # Merge
+        merged = pd.merge(visits_df, patients_df, on='patient_id')
+        final_df = pd.merge(merged, physicians_df, on='physician_id')
+        return final_df
 
 # --- Streamlit Page Setup ---
 st.set_page_config(layout="wide")
 st.title("👨‍⚕️ Physician Performance Dashboard")
 st.markdown("This module analyzes performance metrics for each physician, based on live database data.")
-
 df = load_performance_data()
+
+# --- Initialize Session State for storing the list of selected physicians ---
+if 'performance_physicians_list' not in st.session_state:
+    st.session_state.performance_physicians_list = []
 
 if not df.empty:
     # --- SIDEBAR FILTERS ---
